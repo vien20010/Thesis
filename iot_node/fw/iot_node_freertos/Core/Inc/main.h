@@ -41,7 +41,14 @@ extern uint8_t PRINTF_EN;
 
 
 #define DBG(fmt,...) if (PRINTF_EN == 1) printf(fmt,##__VA_ARGS__)
+//Comment this line if u don't want to DBG2
+#define __DEBUG__
 
+#ifdef __DEBUG__
+	#define DBG2(fmt,...) printf("%s:  %s:  %d: "fmt, __FILE__, __FUNCTION__, __LINE__,##__VA_ARGS__)
+#else
+	#define DBG2(fmt, args...)
+#endif
 
 #ifdef __GNUC__
 /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf

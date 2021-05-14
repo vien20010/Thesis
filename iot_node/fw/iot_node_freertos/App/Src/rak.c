@@ -300,11 +300,13 @@ uint8_t rak_sendData(uint8_t port, char* data) {
 	uint8_t err;
 	if (port > 63)
 		return 0;  // the biggest port is 63
+	DBG2("%s\n",rakCommandSendBuffer);
 	memset(rakCommandSendBuffer, 0, RAK_MAX_SEND_LEN);
 	strcat(rakCommandSendBuffer, "at+send=lora:");
 	strcat(rakCommandSendBuffer, itoa_user(port, 10));
 	strcat(rakCommandSendBuffer, ":");
 	strcat(rakCommandSendBuffer, data);
+	DBG2("%s \r%s\n",data,rakCommandSendBuffer);
 	err = rak_send_raw(rakCommandSendBuffer);
 	return err;
 
@@ -567,22 +569,36 @@ void vRakLRWAN(void) {
 		//		strcat(lrTxBuffer,itoa_user((uint8_t)(uiMemGet(PORT_ADC_2) >> 8), 16));
 		//		strcat(lrTxBuffer,itoa_user((uint8_t)(uiMemGet(PORT_ADC_2) ), 16));
 		//
-		strcat(lrTxBuffer, itoa_user(1, 16));
-		strcat(lrTxBuffer,
-				itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE) >> 8), 16));
-		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE)), 16));
-		//
-		strcat(lrTxBuffer, itoa_user(2, 16));
-		strcat(lrTxBuffer,
-				itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE_) >> 8), 16));
-		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE_)), 16));
+
+//		strcat(lrTxBuffer, itoa_user(1, 16));
+//		strcat(lrTxBuffer,
+//				itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE) >> 8), 16));
+//		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE)), 16));
+//		//
+//		strcat(lrTxBuffer, itoa_user(2, 16));
+//		strcat(lrTxBuffer,
+//				itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE_) >> 8), 16));
+//		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ONE_WIRE_)), 16));
+//		strcat(lrTxBuffer, itoa_user(3, 16));
+//		strcat(lrTxBuffer,
+//				itoa_user((uint8_t) (uiMemGet(PORT_ADC_1) >> 8), 16));
+//		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ADC_1)), 16));
+
 		strcat(lrTxBuffer, itoa_user(3, 16));
+		strcat(lrTxBuffer, itoa_user(0x67, 16)); //LPP Humidity Sensor
+		DBG2("Test do am: %d %x, nhiet do: %d %d\n",uiMemGet(PORT_ONE_WIRE),uiMemGet(PORT_ONE_WIRE),uiMemGet(PORT_ONE_WIRE_),uiMemGet(PORT_ONE_WIRE_));
 		strcat(lrTxBuffer,
-				itoa_user((uint8_t) (uiMemGet(PORT_ADC_1) >> 8), 16));
-		strcat(lrTxBuffer, itoa_user((uint8_t) (uiMemGet(PORT_ADC_1)), 16));
+				itoa_user(0x01, 16));
+		strcat(lrTxBuffer, itoa_user(0x10, 16));
+		//
+		strcat(lrTxBuffer, itoa_user(5, 16));
+		strcat(lrTxBuffer, itoa_user(0x68, 16)); //LPP Temperature Sensor
+//		strcat(lrTxBuffer,
+//				itoa_user(0x00, 16));
+		strcat(lrTxBuffer, itoa_user(0xFF,16));
 
 //uplink
-
+		DBG2("CPP LPP: %s\n",lrTxBuffer);
 		err = rak_sendData(1, lrTxBuffer);
 		if (err == AT_ERR) {
 			DBG("LRWAN error code: %d \r\n", globalError);

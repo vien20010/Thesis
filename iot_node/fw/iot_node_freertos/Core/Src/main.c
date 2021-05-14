@@ -101,6 +101,7 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
 //	HAL_I2C_MspInit(&hi2c1);
 //	v_led_start();
 
@@ -133,7 +134,7 @@ int main(void)
 		/* Found pre-param from eeprom and apply it*/
 		printf(" pre-configuration from EEPROM: %d  \r\n",
 				PARAM[NODE_HAVE_PARAM_ADR]);
-		USER_USART3_UART_Init(); // Modbus re-config
+		//USER_USART3_UART_Init(); // Modbus re-config
 		/*Todo: LORAWAN*/
 
 	} else
@@ -172,7 +173,7 @@ int main(void)
 		/*Notify to the Led and jump in to vAppConfiguationTask !!**/
 
 	}
-
+	DBG2("Test Macro DBG 2\n");
 	/* Print the configuration before jump into RTOS*/
 	printf("Param type   %d \r\n",PARAM[NODE_HAVE_PARAM_ADR]  );
 	printf("Node ID	     %d \r\n",PARAM[NODE_ID_ADR]  );

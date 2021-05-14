@@ -1,0 +1,192 @@
+16:50:46 **** Incremental Build of configuration Debug for project SW ****
+make all 
+arm-none-eabi-gcc "../App/Src/rak.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I"D:/STUDY/202_semester/Thesis/Code/iot_node/fw/iot_node_freertos/Middlewares/Third_Party/cmdline/Inc" -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/STUDY/202_semester/Thesis/Code/iot_node/fw/iot_node_freertos/Middlewares/Third_Party/modbus/include" -I"D:/STUDY/202_semester/Thesis/Code/iot_node/fw/iot_node_freertos/App/Inc" -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"App/Src/rak.d" -MT"App/Src/rak.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "App/Src/rak.o"
+../App/Src/rak.c: In function 'rak_waitingAT':
+../App/Src/rak.c:66:3: warning: implicit declaration of function 'osDelay'; did you mean 'HAL_Delay'? [-Wimplicit-function-declaration]
+   osDelay(100);
+   ^~~~~~~
+   HAL_Delay
+../App/Src/rak.c: In function 'rak_setClass':
+../App/Src/rak.c:110:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(classMode, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_setWorkingMode':
+../App/Src/rak.c:187:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(mode, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_setJoinMode':
+../App/Src/rak.c:204:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(mode, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_join':
+../App/Src/rak.c:210:10: warning: variable 'err' set but not used [-Wunused-but-set-variable]
+  uint8_t err;
+          ^~~
+../App/Src/rak.c: In function 'rak_isConfirm':
+../App/Src/rak.c:275:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(type, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_setTxPower':
+../App/Src/rak.c:281:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(power, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_setAdr':
+../App/Src/rak.c:289:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(type, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_setDr':
+../App/Src/rak.c:295:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(type, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_sendData':
+../App/Src/rak.c:306:31: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+  strcat(rakCommandSendBuffer, itoa_user(port, 10));
+                               ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c: In function 'rak_getStatus':
+../App/Src/rak.c:364:16: warning: implicit declaration of function 'strtol'; did you mean 'strtok'? [-Wimplicit-function-declaration]
+      (uint8_t) strtol(merg, NULL, 16));
+                ^~~~~~
+                strtok
+../App/Src/rak.c: In function 'rak_command_recv_process':
+../App/Src/rak.c:404:44: warning: comparison between pointer and integer
+   if ((strchr(commandRecvBuffer, '=') + 1) == '0') {
+                                            ^~
+../App/Src/rak.c:411:45: warning: comparison between pointer and integer
+    if ((strchr(commandRecvBuffer, '=') + 3) != ',') {
+                                             ^~
+../App/Src/rak.c:414:27: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+     lr_packet_recv.port = atoi(buf);
+                           ^~~~
+../App/Src/rak.c:420:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+    pColon = strchr(commandRecvBuffer, ':');
+           ^
+../App/Src/rak.c: In function 'vRakLRWAN':
+../App/Src/rak.c:587:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(3, 16));
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:588:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(0x67, 16)); //LPP Humidity Sensor
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:591:5: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+     itoa_user(0x01, 16));
+     ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:592:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(0x10, 16));
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:594:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(5, 16));
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:595:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(0x68, 16)); //LPP Temperature Sensor
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:598:22: warning: pointer targets in passing argument 2 of 'strcat' differ in signedness [-Wpointer-sign]
+   strcat(lrTxBuffer, itoa_user(0xFF,16));
+                      ^~~~~~~~~
+In file included from ../App/Src/rak.c:4:0:
+c:\st\stm32cubeide_1.4.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208\tools\arm-none-eabi\include\string.h:34:8: note: expected 'const char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ char  *strcat (char *__restrict, const char *__restrict);
+        ^~~~~~
+../App/Src/rak.c:517:9: warning: unused variable 'pData' [-Wunused-variable]
+  char * pData = "aabbccdd";
+         ^~~~~
+../App/Src/rak.c:516:9: warning: unused variable 'AppKey' [-Wunused-variable]
+  char * AppKey = "5D833B4696D5E01E2F8DC880E30BA5FE";
+         ^~~~~~
+../App/Src/rak.c:515:9: warning: unused variable 'AppEui' [-Wunused-variable]
+  char * AppEui = "70B3D57EF00047C0";
+         ^~~~~~
+../App/Src/rak.c:514:9: warning: unused variable 'DevEui' [-Wunused-variable]
+  char * DevEui = "60C5A8FFFE000001";
+         ^~~~~~
+../App/Src/rak.c: In function 'rak_join':
+../App/Src/rak.c:247:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../App/Src/rak.c: In function 'rak_getStatus':
+../App/Src/rak.c:394:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -o "SW.elf" @"objects.list"   -mcpu=cortex-m3 -T"../STM32F103C8Tx_FLASH.ld" --specs=nosys.specs -Wl,-Map="SW.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SW.elf
+ 
+arm-none-eabi-objdump -h -S  SW.elf  > "SW.list"
+Finished building: SW.list
+ 
+arm-none-eabi-objcopy  -O ihex  SW.elf  "SW.hex"
+Finished building: SW.hex
+ 
+arm-none-eabi-size   SW.elf 
+   text	   data	    bss	    dec	    hex	filename
+  46764	    692	  18868	  66324	  10314	SW.elf
+Finished building: default.size.stdout
+ 
+16:50:51 **** Incremental Build of configuration Debug for project SW ****
+make all 
+arm-none-eabi-size   SW.elf 
+   text	   data	    bss	    dec	    hex	filename
+  46764	    692	  18868	  66324	  10314	SW.elf
+Finished building: default.size.stdout
+ 
+16:50:53 **** Incremental Build of configuration Debug for project SW ****
+make all 
+arm-none-eabi-size   SW.elf 
+   text	   data	    bss	    dec	    hex	filename
+  46764	    692	  18868	  66324	  10314	SW.elf
+Finished building: default.size.stdout
+ 
